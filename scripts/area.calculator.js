@@ -11,6 +11,12 @@ function calculateTriangleArea(){
     const height=parseFloat(heightValueText);
     console.log(height)
 
+    // validate input
+    if(isNaN(base)|| isNaN(height)){
+        alert('please insert number');
+        return;
+    }
+
     const area=0.5*base*height;
     console.log(area)
 
@@ -30,6 +36,12 @@ function calculateRectangleArea(){
     const lengthValueText =lengthField.value;
     const length=parseFloat(lengthValueText);
     console.log(length)
+
+     // validate input
+     if(isNaN(width)|| isNaN(length)){
+        alert('please insert number');
+        return;
+    }
 
     const area=width*length;
     console.log(area)
@@ -52,6 +64,12 @@ function calculateParallelogramArea(){
     const height =getInputValue('parallelogram-Height');
     // console.log(height);
 
+     // validate input
+     if(isNaN(base)|| isNaN(height)){
+        alert('please insert number');
+        return;
+    }
+
     const Parea=base*height;
     setElementInnerText('parallelogram-area',Parea);
 
@@ -65,7 +83,8 @@ function calculateEllipseArea(){
     const minorRadius =getInputValue('Ellipse-minor-radius');
 
     const areaEllipse=3.14*majorRadius*minorRadius;
-    setElementInnerText('Ellipse-area', areaEllipse );
+    const areaToDecimal= areaEllipse.toFixed(2);
+    setElementInnerText('Ellipse-area', areaToDecimal );
 }
 
 
